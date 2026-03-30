@@ -1,12 +1,14 @@
 package utils;
 
+import org.testng.ITestListener;
 import org.testng.ITestResult;
-import org.testng.TestListenerAdapter;
+import org.testng.ITestContext;
 
 import com.aventstack.extentreports.*;
+
 import base.BaseTest;
 
-public class TestListener extends TestListenerAdapter {
+public class TestListener implements ITestListener {
 
     static ExtentReports extent = ExtentManager.getInstance();
     static ExtentTest test;
@@ -23,7 +25,6 @@ public class TestListener extends TestListenerAdapter {
 
     @Override
     public void onTestFailure(ITestResult result) {
-
         test.fail("Test Failed");
 
         String path = ScreenshotUtils.captureScreenshot(BaseTest.driver, result.getName());
@@ -36,7 +37,16 @@ public class TestListener extends TestListenerAdapter {
     }
 
     @Override
-    public void onFinish(org.testng.ITestContext context) {
+    public void onTestSkipped(ITestResult result) {}
+
+    @Override
+    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {}
+
+    @Override
+    public void onStart(ITestContext context) {}
+
+    @Override
+    public void onFinish(ITestContext context) {
         extent.flush();
     }
 }
