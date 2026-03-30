@@ -54,7 +54,7 @@ public class LoginTest extends BaseTest {
 	    WaitUtils wait = new WaitUtils(driver);
 	    wait.waitForUrlContains("cart");
 
-	    Assert.assertTrue(driver.getCurrentUrl().contains("cart"));
+	    Assert.assertTrue(driver.getCurrentUrl().contains("https://www.saucedemo.com/inventory.html"));
 	}
 	
 	@Test(groups = "regression")
