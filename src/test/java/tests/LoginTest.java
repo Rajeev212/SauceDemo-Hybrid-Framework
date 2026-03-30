@@ -28,7 +28,7 @@ public class LoginTest extends BaseTest {
 
         InventoryPage ip = new InventoryPage(driver);
 
-        Assert.assertEquals(ip.getPageTitle(), "Product");
+        Assert.assertEquals(ip.getPageTitle(), "Products");
 	}
 	@Test(groups = "regression")
 	public void invalidLoginTest() {
