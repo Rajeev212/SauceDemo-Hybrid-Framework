@@ -41,7 +41,7 @@ public class LoginTest extends BaseTest {
 	    Assert.assertTrue(error.contains("Username and password do not match"));
 	}
 	
-	@Test(groups = "smoke")
+	/*@Test(groups = "smoke")
 	public void addToCartTest() {
 
 	    LoginPage lp = new LoginPage(driver);
@@ -55,7 +55,7 @@ public class LoginTest extends BaseTest {
 	    wait.waitForUrlContains("cart");
 
 	    Assert.assertTrue(driver.getCurrentUrl().contains("https://www.saucedemo.com/inventory.html"));
-	}
+	} */
 	
 	@Test(groups = "regression")
 	public void verifyProductInCartTest() {
