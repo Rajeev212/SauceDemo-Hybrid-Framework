@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [SuiteDemo Suite]" guice-stage="DEVELOPMENT">
+  <test parallel="tests" name="Chrome Tests(failed)">
+    <parameter name="browser" value="chrome"/>
+    <groups>
+      <run>
+        <include name="smoke"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="tests.LoginTest">
+        <methods>
+          <include name="validLoginTest"/>
+          <include name="addToCartTest"/>
+        </methods>
+      </class> <!-- tests.LoginTest -->
+    </classes>
+  </test> <!-- Chrome Tests(failed) -->
+  <test parallel="tests" name="Edge Tests(failed)">
+    <parameter name="browser" value="edge"/>
+    <classes>
+      <class name="tests.LoginTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="invalidLoginTest"/>
+          <include name="tearDown"/>
+          <include name="validLoginTest"/>
+          <include name="verifyProductInCartTest"/>
+          <include name="addToCartTest"/>
+        </methods>
+      </class> <!-- tests.LoginTest -->
+    </classes>
+  </test> <!-- Edge Tests(failed) -->
+</suite> <!-- Failed suite [SuiteDemo Suite] -->
